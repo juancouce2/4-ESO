@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Identidad Activa 4º ESO</title>
+  <style>
+    body { font-family: system-ui, Arial; margin: 0; background:#f4f6fb; }
+    .wrap { max-width: 720px; margin: 0 auto; padding: 20px; }
+    .card { background: white; border-radius: 16px; padding: 20px; box-shadow: 0 10px 25px rgba(0,0,0,.08); }
+    h1 { margin: 0 0 10px; font-size: 22px; }
+    p { margin-bottom: 15px; color: #444; }
+    label { display:block; margin-top: 12px; font-weight: 600; }
+    input, select, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      margin-top: 5px;
+      font-size: 15px;
+    }
+    textarea { min-height: 70px; resize: vertical; }
+    .row { display:flex; gap: 10px; }
+    .row > div { flex:1; }
+    button {
+      margin-top: 15px;
+      width:100%;
+      padding: 12px;
+      border:0;
+      border-radius: 12px;
+      background:#1f4fff;
+      color:white;
+      font-weight:700;
+      font-size: 16px;
+      cursor:pointer;
+    }
+    button:disabled { opacity:.6; cursor:not-allowed; }
+    .msg { margin-top: 12px; padding: 10px; border-radius: 12px; display:none; }
+    .ok { background:#e9fbef; color:#14532d; border:1px solid #b7f0c6; }
+    .bad { background:#fff0f0; color:#7f1d1d; border:1px solid #ffcccc; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Identidad Activa · 4º ESO</h1>
+      <p>Registro del reto vinculado a tu Unidad Didáctica.</p>
+
+      <form id="formulario">
+
+        <label>Nombre y apellidos</label>
+        <input id="nombre" required>
+
+        <div class="row">
+          <div>
+            <label>Grupo</label>
+            <select id="grupo" required>
+              <option value="">Selecciona</option>
+              <option>4ºA</option>
+              <option>4ºB</option>
+              <option>4ºC</option>
+            </select>
+          </div>
+          <div>
+            <label>Unidad Didáctica</label>
+            <select id="ud" required>
+              <option value="">Selecciona</option>
+              <option>UD1</option>
+              <option>UD2</option>
+              <option>UD3</option>
+              <option>UD4</option>
+              <option>UD5</option>
+              <option>UD6</option>
+              <option>UD7</option>
+              <option>UD8</option>
+              <option>UD9</option>
+              <option>UD10</option>
+              <option>UD11</option>
+              <option>UD12</option>
+            </select>
+          </div>
+        </div>
+
+        <label>¿Reto base completado?</label>
+        <select id="base" required>
+          <option value="">Selecciona</option>
+          <option value="SI">Sí</option>
+          <option value="NO">No</option>
+        </select>
+
+        <label>Reto opcional</label>
+        <select id="opcional" required>
+          <option value="NINGUNO">Ninguno</option>
+          <option value="A">Opción A</option>
+          <option value="B">Opción B</option>
+        </select>
+
+        <label>Evidencia (pega enlace Drive)</label>
+        <input id="evidencia" required>
+
+        <div class="row">
+          <div>
+            <label>Esfuerzo (1–5)</label>
+            <select id="esfuerzo" required>
+              <option value="">Selecciona</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+          <div>
+            <label>Energía después (1–5)</label>
+            <select id="energia" required>
+              <option value="">Selecciona</option>
+              <option>1</option>
+              <option>2</option>
+              <option>3</option>
+              <option>4</option>
+              <option>5</option>
+            </select>
+          </div>
+        </div>
+
+        <label>Reflexión (mínimo 40 caracteres)</label>
+        <textarea id="reflexion" required></textarea>
+
+        <button type="submit">ENVIAR</button>
+
+        <div id="mensaje" class="msg"></div>
+
+      </form>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
